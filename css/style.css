@@ -1,0 +1,1328 @@
+/* Hebrew Google Fonts for 2nd Grade Kids: Rubik & Varela Round */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,600;0,800;1,400&family=Varela+Round&display=swap');
+
+:root {
+  --primary-pink: #d81b60;
+  --primary-teal: #00acc1;
+  --primary-blue: #1e88e5;
+  --accent-gold: #fbc02d;
+  --accent-orange: #fb8c00;
+  --bg-gradient: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+  --card-bg: #ffffff;
+  --success-color: #43a047;
+  --warning-color: #ff9800;
+  --error-soft: #ff7675;
+  --text-dark: #2c3e50;
+  --border-radius: 18px;
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --btn-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  direction: rtl;
+  font-family: 'Rubik', 'Varela Round', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #eef5fc 0%, #fef4f8 50%, #fef9e7 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  font-feature-settings: "kern" 1;
+}
+
+/* Header & Brand */
+header.app-header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid #ffdeeb;
+  padding: 12px 20px;
+  box-shadow: 0 4px 16px rgba(216, 27, 96, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.brand-logo-link:hover {
+  transform: scale(1.03);
+}
+
+.brand-logo-img {
+  height: 62px;
+  max-width: 210px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.brand-title-box h1 {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-pink);
+  margin-bottom: 2px;
+}
+
+.brand-title-box p {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Success Score Badge */
+.score-badge {
+  background: linear-gradient(135deg, #fff9c4, #fff176);
+  border: 2px solid #fbc02d;
+  color: #795548;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 10px rgba(251, 192, 45, 0.25);
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.score-badge.pop {
+  transform: scale(1.25);
+}
+
+.score-badge .star-icon {
+  font-size: 1.3rem;
+  animation: starTwinkle 2s infinite ease-in-out;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25) rotate(15deg); }
+}
+
+/* Music Player Widget */
+.music-widget {
+  background: linear-gradient(135deg, #e0f7fa, #e8f5e9);
+  border: 2px solid #80deea;
+  border-radius: 30px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 3px 8px rgba(0, 172, 193, 0.15);
+}
+
+.music-btn {
+  background: #ffffff;
+  border: 2px solid #4dd0e1;
+  color: #00838f;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.music-btn:hover {
+  background: #00bcd4;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.music-title-wrap {
+  display: flex;
+  flex-direction: column;
+  max-width: 170px;
+}
+
+.music-label {
+  font-size: 0.72rem;
+  color: #00838f;
+  font-weight: 600;
+}
+
+.current-song-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #006064;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* External Link Button */
+.site-link-btn {
+  background: linear-gradient(135deg, #ff4081, #d81b60);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 24px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 3px 10px rgba(216, 27, 96, 0.3);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.site-link-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 27, 96, 0.4);
+}
+
+/* Category Navigation Bar */
+nav.activities-nav {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 10px 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.nav-scroll-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 0 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: #f48fb1 #fce4ec;
+}
+
+.nav-scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb {
+  background: #f48fb1;
+  border-radius: 4px;
+}
+
+.activity-tab-btn {
+  background: #f8fafc;
+  border: 2px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 8px 16px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: #4a5568;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.activity-tab-btn:hover {
+  background: #fff0f6;
+  border-color: #f687b3;
+  color: #b83280;
+  transform: translateY(-2px);
+}
+
+.activity-tab-btn.active {
+  background: linear-gradient(135deg, #ec407a, #d81b60);
+  border-color: #c2185b;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(216, 27, 96, 0.35);
+  transform: scale(1.05);
+}
+
+.tab-badge {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2px 7px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* Main Container */
+main.app-main {
+  flex: 1;
+  max-width: 1000px;
+  width: 95%;
+  margin: 25px auto 40px auto;
+}
+
+/* Activity Card Box */
+.activity-card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 3px solid #ffdeeb;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.activity-header {
+  text-align: center;
+  margin-bottom: 25px;
+  border-bottom: 2px dashed #fce4ec;
+  padding-bottom: 18px;
+}
+
+.activity-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--primary-pink);
+  margin-bottom: 8px;
+}
+
+.activity-instruction {
+  font-size: 1.2rem;
+  color: #4a5568;
+  font-weight: 600;
+}
+
+/* Hanukkah SVG Graphics */
+.svg-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px auto;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.08));
+}
+
+.svg-container svg {
+  max-width: 160px;
+  max-height: 140px;
+  transition: transform 0.3s ease;
+}
+
+.svg-container.large svg {
+  max-width: 220px;
+  max-height: 190px;
+}
+
+.svg-container:hover svg {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Option Buttons & Interactive Elements */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.option-btn {
+  background: #ffffff;
+  border: 3px solid #b3e5fc;
+  border-radius: 16px;
+  padding: 16px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0277bd;
+  cursor: pointer;
+  box-shadow: var(--btn-shadow);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 70px;
+}
+
+.option-btn:hover {
+  transform: translateY(-4px) scale(1.03);
+  border-color: #0288d1;
+  background: #e1f5fe;
+}
+
+.option-btn.correct {
+  background: #e8f5e9 !important;
+  border-color: #2e7d32 !important;
+  color: #1b5e20 !important;
+  animation: bounceCorrect 0.6s ease;
+}
+
+.option-btn.incorrect {
+  background: #ffebee !important;
+  border-color: #c62828 !important;
+  color: #b71c1c !important;
+  animation: shakeWrong 0.5s ease;
+}
+
+@keyframes bounceCorrect {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes shakeWrong {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+/* Feedback Banner */
+.feedback-banner {
+  min-height: 48px;
+  margin: 15px 0;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.feedback-banner.success {
+  background: #e8f5e9;
+  border: 2px solid #81c784;
+  color: #2e7d32;
+}
+
+.feedback-banner.try-again {
+  background: #fff3e0;
+  border: 2px solid #ffb74d;
+  color: #e65100;
+}
+
+.feedback-banner.empty {
+  visibility: hidden;
+}
+
+/* Progress and Pagination */
+.activity-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+  padding-top: 15px;
+  border-top: 2px solid #f1f5f9;
+}
+
+.progress-text {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.action-nav-btn {
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(30, 136, 229, 0.3);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.action-nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(30, 136, 229, 0.4);
+}
+
+.action-nav-btn:disabled {
+  background: #cfd8dc;
+  color: #78909c;
+  box-shadow: none;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Specific Activity Layouts */
+
+/* 1. Prefix Complete */
+.prefix-word-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a365d;
+  margin: 15px 0;
+  direction: rtl;
+}
+
+.prefix-slot {
+  display: inline-block;
+  min-width: 60px;
+  height: 55px;
+  line-height: 50px;
+  border: 3px dashed #ec407a;
+  border-radius: 12px;
+  background: #fff0f6;
+  text-align: center;
+  color: #d81b60;
+  font-size: 2.2rem;
+}
+
+/* 2. Word Match Pairs */
+.match-columns-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.match-item {
+  background: #ffffff;
+  border: 3px solid #e0e7ff;
+  border-radius: 16px;
+  padding: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.match-item:hover {
+  border-color: #818cf8;
+  transform: scale(1.02);
+}
+
+.match-item.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.2);
+  transform: scale(1.04);
+}
+
+.match-item.matched {
+  border-color: #22c55e;
+  background: #f0fdf4;
+  color: #15803d;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.match-item.error-shake {
+  animation: shakeWrong 0.5s ease;
+  border-color: #ef4444;
+  background: #fef2f2;
+}
+
+.match-word-text {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #1e293b;
+}
+
+/* 3. Odd One Out */
+.odd-options-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 25px 0;
+}
+
+.odd-card {
+  background: #ffffff;
+  border: 3px solid #fed7aa;
+  border-radius: 20px;
+  padding: 18px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(251, 146, 60, 0.1);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.odd-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: #ea580c;
+  box-shadow: 0 10px 20px rgba(234, 88, 12, 0.18);
+}
+
+.odd-card-emoji {
+  font-size: 3.5rem;
+  margin: 15px 0;
+}
+
+.odd-card-label {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #9a3412;
+  margin-top: 10px;
+}
+
+/* 4. Sentence Complete */
+.sentence-box {
+  background: #f8fafc;
+  border: 3px solid #cbd5e1;
+  border-radius: 18px;
+  padding: 22px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  margin: 20px 0;
+  color: #0f172a;
+}
+
+.sentence-blank-highlight {
+  display: inline-block;
+  padding: 2px 14px;
+  background: #fef08a;
+  border-bottom: 4px solid #ca8a04;
+  border-radius: 8px;
+  color: #854d0e;
+}
+
+/* 5. Scrambled Letters (כותבים מילים) */
+.letters-bank {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.letter-tile {
+  background: #ffffff;
+  border: 3px solid #38bdf8;
+  border-radius: 14px;
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0369a1;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(3, 105, 161, 0.15);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.letter-tile:hover {
+  transform: translateY(-4px) scale(1.1);
+  background: #e0f2fe;
+}
+
+.letter-tile.used {
+  opacity: 0.35;
+  pointer-events: none;
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+.word-target-slots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  direction: rtl;
+}
+
+.target-slot {
+  width: 58px;
+  height: 58px;
+  border: 3px dashed #ec407a;
+  border-radius: 14px;
+  background: #fff1f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #be123c;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.target-slot:hover {
+  background: #ffe4e6;
+}
+
+/* 6 & 8. Sentence Choices / True-False */
+.sentence-choices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 25px 0;
+}
+
+.sentence-choice-card {
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px 24px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.sentence-choice-card:hover {
+  transform: translateX(-4px);
+  border-color: #38bdf8;
+  background: #f0f9ff;
+}
+
+.sentence-choice-card.correct {
+  background: #f0fdf4 !important;
+  border-color: #22c55e !important;
+  color: #166534 !important;
+}
+
+.sentence-choice-card.incorrect {
+  background: #fef2f2 !important;
+  border-color: #ef4444 !important;
+  color: #991b1b !important;
+}
+
+/* 7. Logical Sequence */
+.sequence-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.sequence-item-row {
+  background: #ffffff;
+  border: 3px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+}
+
+.sequence-order-selector {
+  display: flex;
+  gap: 8px;
+}
+
+.seq-num-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.seq-num-btn:hover {
+  background: #e2e8f0;
+  transform: scale(1.1);
+}
+
+.seq-num-btn.active {
+  background: #0284c7;
+  border-color: #0369a1;
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(2, 132, 199, 0.3);
+}
+
+.sequence-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1e293b;
+  flex: 1;
+}
+
+/* 9. Word Search Grid (תפזורת) */
+.wordsearch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.ws-target-word-banner {
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 3px solid #f59e0b;
+  border-radius: 20px;
+  padding: 12px 28px;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #92400e;
+  box-shadow: 0 4px 10px rgba(245, 158, 11, 0.2);
+}
+
+.ws-grid {
+  display: grid;
+  gap: 8px;
+  background: #e0f2fe;
+  padding: 14px;
+  border-radius: 20px;
+  border: 3px solid #7dd3fc;
+  box-shadow: 0 6px 16px rgba(125, 211, 252, 0.25);
+}
+
+.ws-cell {
+  width: 58px;
+  height: 58px;
+  background: #ffffff;
+  border: 2px solid #bae6fd;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0369a1;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ws-cell:hover {
+  background: #f0f9ff;
+  transform: scale(1.08);
+}
+
+.ws-cell.selected {
+  background: #fef08a !important;
+  border-color: #eab308 !important;
+  color: #854d0e !important;
+}
+
+.ws-cell.found {
+  background: #bbf7d0 !important;
+  border-color: #22c55e !important;
+  color: #15803d !important;
+  transform: scale(1.05);
+}
+
+.ws-count-box {
+  background: #ffffff;
+  border: 3px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 16px 24px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.ws-count-box p {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.ws-count-btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ws-count-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  border: 3px solid #94a3b8;
+  background: #f1f5f9;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.ws-count-btn:hover {
+  border-color: #0284c7;
+  color: #0284c7;
+  transform: scale(1.1);
+}
+
+.ws-count-btn.selected {
+  background: #0284c7;
+  border-color: #0369a1;
+  color: #ffffff;
+}
+
+/* 10. Puzzle (פאזל) */
+.puzzle-selector-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 8px 0;
+  margin-bottom: 20px;
+}
+
+.puzzle-tab-btn {
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.puzzle-tab-btn.active {
+  background: #8b5cf6;
+  border-color: #7c3aed;
+  color: #ffffff;
+}
+
+.puzzle-board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.puzzle-grid {
+  direction: ltr;
+  display: grid;
+  gap: 4px;
+  background: #f3e8ff;
+  border: 4px solid #c084fc;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 8px 24px rgba(192, 132, 252, 0.25);
+}
+
+.puzzle-grid.grid-3x3 {
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+}
+
+.puzzle-grid.grid-4x3 {
+  grid-template-columns: repeat(4, 80px);
+  grid-template-rows: repeat(3, 80px);
+}
+
+.puzzle-piece {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #d8b4fe;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.puzzle-piece:hover {
+  transform: scale(1.05);
+  border-color: #a855f7;
+  z-index: 2;
+}
+
+.puzzle-piece.selected {
+  outline: 4px solid #f59e0b;
+  transform: scale(1.08);
+  z-index: 5;
+}
+
+.puzzle-piece.correct-pos {
+  border-color: #22c55e;
+  box-shadow: inset 0 0 8px rgba(34, 197, 94, 0.25);
+}
+
+.puzzle-piece-number {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-piece-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/* 12. Memory Game (משחק זיכרון) */
+.memory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 14px;
+  margin: 25px auto;
+  max-width: 920px;
+}
+
+.memory-card {
+  perspective: 1000px;
+  height: 130px;
+  cursor: pointer;
+}
+
+.memory-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  border-radius: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+.memory-card-front {
+  background: linear-gradient(135deg, #6366f1, #4338ca);
+  border: 3px solid #818cf8;
+  color: #ffffff;
+  font-size: 2.2rem;
+}
+
+.memory-card-back {
+  background: #ffffff;
+  border: 3px solid #38bdf8;
+  transform: rotateY(180deg);
+}
+
+.memory-card.matched .memory-card-back {
+  border-color: #22c55e;
+  background: #f0fdf4;
+}
+
+.memory-card-text {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-top: 4px;
+}
+
+/* Celebration Modal (גביע, קונפטי ומחיאות כפיים) */
+.celebration-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.celebration-modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.celebration-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 35px 30px;
+  text-align: center;
+  max-width: 480px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  border: 4px solid #fcd34d;
+  transform: scale(0.85);
+  transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.celebration-modal-overlay.active .celebration-card {
+  transform: scale(1);
+}
+
+.celebration-trophy-box {
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 15px auto;
+  animation: trophyFloat 2.5s infinite ease-in-out;
+}
+
+@keyframes trophyFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
+}
+
+.celebration-card h3 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #d97706;
+  margin-bottom: 8px;
+}
+
+.celebration-card p {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 25px;
+}
+
+.celebration-btn {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border: none;
+  border-radius: 18px;
+  padding: 14px 32px;
+  font-size: 1.35rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.4);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.celebration-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+}
+
+/* Footer Section */
+footer.app-footer {
+  background: #ffffff;
+  border-top: 3px solid #ffdeeb;
+  padding: 22px 15px;
+  margin-top: auto;
+  text-align: center;
+  box-shadow: 0 -4px 16px rgba(0,0,0,0.03);
+}
+
+/* Symbols Gallery Grid (הכרת סמלי החג) */
+.symbols-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px, 1fr));
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.symbol-card {
+  background: #ffffff;
+  border: 3px solid #fce4ec;
+  border-radius: 20px;
+  padding: 15px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(216, 27, 96, 0.08);
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.symbol-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  border-color: #f48fb1;
+  box-shadow: 0 10px 22px rgba(216, 27, 96, 0.16);
+}
+
+.symbol-card.visited {
+  border-color: #81c784;
+  background: #f1f8e9;
+}
+
+.symbol-card-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #880e4f;
+}
+
+.symbol-detail-box {
+  background: linear-gradient(135deg, #fffde7, #fff9c4);
+  border: 3px solid #fbc02d;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 18px 0;
+  text-align: center;
+  animation: fadeInScale 0.3s ease;
+}
+
+.symbol-detail-box h3 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #d84315;
+  margin-bottom: 8px;
+}
+
+.symbol-detail-box p {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #3e2723;
+  line-height: 1.6;
+}
+
+@keyframes fadeInScale {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.puzzle-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.puzzle-size-btn {
+  background: #fff;
+  border: 2px solid #a855f7;
+  color: #7e22ce;
+  border-radius: 14px;
+  padding: 6px 14px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.puzzle-size-btn.active {
+  background: #a855f7;
+  color: #fff;
+}
+
+.puzzle-hint-preview {
+  background: #fdf4ff;
+  border: 2px dashed #d946ef;
+  border-radius: 16px;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-site-name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-pink);
+}
+
+.footer-copyright {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+/* Responsive Styles for Tablets and Phones */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .brand-section {
+    justify-content: center;
+    text-align: center;
+  }
+  .header-controls {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .activity-card {
+    padding: 18px 14px;
+  }
+  .odd-options-grid {
+    grid-template-columns: 1fr;
+  }
+  .match-columns-grid {
+    grid-template-columns: 1fr;
+  }
+  .sentence-choice-card {
+    font-size: 1.15rem;
+    padding: 14px;
+  }
+  .ws-cell {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
+  .puzzle-grid.grid-3x3 {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+  }
+  .puzzle-grid.grid-4x3 {
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: repeat(3, 65px);
+  }
+}

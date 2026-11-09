@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>חַג הַחֲנֻכָּה לְכִתָּה ב' | הוֹרָאָה בַּהֲנָעָה - הַמוֹרָה זִינוֹבִי אִינָה</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Brand Header -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section">
+        <a href="https://www.bakitashelinna.co.il/" target="_blank" rel="noopener noreferrer" class="brand-logo-link" title="לָאֲתָר שֶׁל הַמּוֹרָה אִינָה">
+          <img src="assets/logo.png" alt="לוֹגוֹ הוֹרָאָה בַּהֲנָעָה - מִשֻׁלְחָנָה שֶׁל הַמוֹרָה זִינוֹבִי אִינָה" class="brand-logo-img">
+        </a>
+        <div class="brand-title-box">
+          <h1>חַג הַחֲנֻכָּה – לְמִידָה בְּכֵיף לְכִתָּה ב'</h1>
+          <p>הַכָּרַת סַמְלֵי הַחַג בְּשָׂפָה קַלָּה, בְּרוּרָה וּמְנֻקֶּדֶת</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <!-- Total Student Successes Counter -->
+        <div class="score-badge" id="score-badge" title="סַךְ כָּל הַהַצְלָחוֹת שֶׁלָּכֶם">
+          <span class="star-icon">⭐</span>
+          <span>סַךְ הַצְלָחוֹת: <strong id="total-score-count">0</strong></span>
+        </div>
+
+        <!-- Hanukkah Songs Music Player -->
+        <div class="music-widget" aria-label="נַגָּן שִׁירֵי חֲנֻכָּה">
+          <button class="music-btn" id="music-play-btn" title="נַגֵּן / עֲצֹר שִׁירֵי חֲנֻכָּה" aria-label="נַגֵּן שִׁיר">▶️</button>
+          <button class="music-btn" id="music-next-btn" title="הַשִּׁיר הַבָּא" aria-label="הַשִּׁיר הַבָּא">⏭️</button>
+          <button class="music-btn" id="music-mute-btn" title="הַשְׁתֵּק / הַפְעֵל קוֹל" aria-label="הַשְׁתֵּק">🔊</button>
+          <div class="music-title-wrap">
+            <span class="music-label">🎵 שִׁירֵי חֲנֻכָּה:</span>
+            <span class="current-song-name" id="current-song-name">סְבִיבוֹן סֹב סֹב סֹב</span>
+          </div>
+        </div>
+
+        <!-- Direct Link to Website -->
+        <a href="https://www.bakitashelinna.co.il/" target="_blank" rel="noopener noreferrer" class="site-link-btn">
+          <span>🌐 לָאֲתָר שֶׁלִּי</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Activity Navigation Menu -->
+  <nav class="activities-nav" aria-label="תַּפְרִיט פְּעִילֻיּוֹת">
+    <div class="nav-scroll-container">
+      <button class="activity-tab-btn active" data-tab="symbolsGallery">🕯️ סַמְלֵי הַחַג</button>
+      <button class="activity-tab-btn" data-tab="prefixComplete"><span class="tab-badge">1</span> הַשְׁלָמַת צֵרוּף</button>
+      <button class="activity-tab-btn" data-tab="wordMatch"><span class="tab-badge">2</span> מִלָּה לְצִיּוּר</button>
+      <button class="activity-tab-btn" data-tab="oddOneOut"><span class="tab-badge">3</span> מִי יוֹצֵא דּוֹפֶן?</button>
+      <button class="activity-tab-btn" data-tab="sentenceComplete"><span class="tab-badge">4</span> מִלָּה בְּמִשְׁפָּט</button>
+      <button class="activity-tab-btn" data-tab="scrambledWords"><span class="tab-badge">5</span> כּוֹתְבִים מִלִּים</button>
+      <button class="activity-tab-btn" data-tab="sentenceMatchPicture"><span class="tab-badge">6</span> מִשְׁפָּט לְצִיּוּר</button>
+      <button class="activity-tab-btn" data-tab="logicalSequence"><span class="tab-badge">7</span> מָה קָרָה קֹדֶם?</button>
+      <button class="activity-tab-btn" data-tab="trueOrFalse"><span class="tab-badge">8</span> נָכוֹן אוֹ לֹא נָכוֹן</button>
+      <button class="activity-tab-btn" data-tab="wordSearches"><span class="tab-badge">9</span> תַּפְזוֹרוֹת קַלּוֹת</button>
+      <button class="activity-tab-btn" data-tab="puzzles"><span class="tab-badge">10</span> פָּאזְלִים קַלִּים</button>
+      <button class="activity-tab-btn" data-tab="memoryGame"><span class="tab-badge">12</span> מִשְׂחַק זִכָּרוֹן</button>
+    </div>
+  </nav>
+
+  <!-- Main Interactive Stage -->
+  <main class="app-main" id="activity-stage">
+    <!-- Dynamic activity content renders here -->
+  </main>
+
+  <!-- Stage Completion Celebration Modal (Trophy + Confetti + Clapping) -->
+  <div class="celebration-modal-overlay" id="celebration-modal" role="dialog" aria-modal="true">
+    <div class="celebration-card">
+      <div class="celebration-trophy-box" id="celebration-trophy-box"></div>
+      <h3 id="celebration-title">כָּל הַכָּבוֹד! 🏆</h3>
+      <p id="celebration-subtitle">הִצְלַחְתֶּם בַּשָּׁלָב!</p>
+      <button class="celebration-btn" id="celebration-next-btn">הַמְשִׁיכוּ הָלְאָה ✨</button>
+    </div>
+  </div>
+
+  <!-- Required Footer -->
+  <footer class="app-footer">
+    <div class="footer-content">
+      <p class="footer-site-name">הוֹרָאָה בַּהֲנָעָה, מִשֻׁלְחָנָה שֶׁל הַמוֹרָה זִינוֹבִי אִינָה</p>
+      <p class="footer-copyright">כָּל הַזְכוּיוֹת שְׁמוּרוֹת לַמוֹרָה זִינוֹבִי אִינָה©</p>
+    </div>
+  </footer>
+
+  <!-- Application Scripts -->
+  <script src="js/svg-assets.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
